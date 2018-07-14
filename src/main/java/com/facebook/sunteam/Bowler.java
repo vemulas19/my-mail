@@ -11,6 +11,16 @@ public class Bowler {
 	private String playerRole;
 	private String playerBest;
 
+	
+	
+	public Bowler(String playerName, String playerJursyNumber, String playerRole, String playerBest) {
+		super();
+		this.playerName = playerName;
+		this.playerJursyNumber = playerJursyNumber;
+		this.playerRole = playerRole;
+		this.playerBest = playerBest;
+	}
+
 	public String getPlayerName() {
 		return playerName;
 	}

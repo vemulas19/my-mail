@@ -10,6 +10,15 @@ public class BatMen {
 	private String playerJursyNumber;
 	private String playerRole;
 
+	
+	
+	public BatMen(String playerName, String playerJursyNumber, String playerRole) {
+		super();
+		this.playerName = playerName;
+		this.playerJursyNumber = playerJursyNumber;
+		this.playerRole = playerRole;
+	}
+
 	public String getPlayerName() {
 		return playerName;
 	}
