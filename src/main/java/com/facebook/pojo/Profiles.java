@@ -7,14 +7,14 @@ package com.facebook.pojo;
  */
 public class Profiles {
 
-	private String profileName;
+	private String profileId;
 	private String profileValidity;
 	
-	public String getProfileName() {
-		return profileName;
+	public String getProfileId() {
+		return profileId;
 	}
-	public void setProfileName(String profileName) {
-		this.profileName = profileName;
+	public void setProfileId(String profileId) {
+		this.profileId = profileId;
 	}
 	public String getProfileValidity() {
 		return profileValidity;
