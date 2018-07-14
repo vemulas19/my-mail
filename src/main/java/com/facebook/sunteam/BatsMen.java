@@ -4,17 +4,17 @@ package com.facebook.sunteam;
  * @author sagar
  *
  */
-public class BatMen {
+public class BatsMen {
 
 	private String playerName;
 	private String playerJursyNumber;
 	private String playerRole;
 
 	
-	public BatMen() {
+	public BatsMen() {
 		// TODO Auto-generated constructor stub
 	}
-	public BatMen(String playerName, String playerJursyNumber, String playerRole) {
+	public BatsMen(String playerName, String playerJursyNumber, String playerRole) {
 		super();
 		this.playerName = playerName;
 		this.playerJursyNumber = playerJursyNumber;
