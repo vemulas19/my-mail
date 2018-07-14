@@ -2,7 +2,7 @@ package com.gitpractice.classes;
 
 public class TestGitBranch {
 	private Integer id;
-	private String name;
+	private String branchName;
 	private String email;
 	public Integer getId() {
 		return id;
