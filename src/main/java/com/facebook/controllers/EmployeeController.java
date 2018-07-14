@@ -34,7 +34,7 @@ public class EmployeeController {
 	@RequestMapping(value = "/registerEmployee")
 	public String saveEmployee(Employee emp) {
 		System.out.println("Entered into saveEmployee :: EmployeeController");
-		System.out.println("hjsghgsjs");
+		System.out.println("hjsghgsjsoooo");
 		System.out.println("-----------------------------------------------------------");
 		
 		
