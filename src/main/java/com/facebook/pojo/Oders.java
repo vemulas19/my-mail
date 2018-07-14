@@ -6,7 +6,7 @@ package com.facebook.pojo;
  */
 public class Oders {
 
-	private Integer oser_id;
+	private Integer oder_id;
 	private String oder_name;
 	private String oder_price;
 	private String oder_location;
