@@ -14,6 +14,13 @@ public class Oders {
 	
 	
 	
+	public Oders(Integer oser_id, String oder_name, String oder_price, String oder_location) {
+		super();
+		this.oser_id = oser_id;
+		this.oder_name = oder_name;
+		this.oder_price = oder_price;
+		this.oder_location = oder_location;
+	}
 	public Integer getOser_id() {
 		return oser_id;
 	}
