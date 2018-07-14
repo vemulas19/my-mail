@@ -11,7 +11,9 @@ public class BatMen {
 	private String playerRole;
 
 	
-	
+	public BatMen() {
+		// TODO Auto-generated constructor stub
+	}
 	public BatMen(String playerName, String playerJursyNumber, String playerRole) {
 		super();
 		this.playerName = playerName;

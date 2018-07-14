@@ -11,7 +11,9 @@ public class Bowler {
 	private String playerRole;
 	private String playerBest;
 
-	
+	public Bowler() {
+		// TODO Auto-generated constructor stub
+	}
 	
 	public Bowler(String playerName, String playerJursyNumber, String playerRole, String playerBest) {
 		super();
