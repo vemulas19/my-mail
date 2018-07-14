@@ -6,8 +6,7 @@ public class LivanController {
 		
 		
 		System.out.println("Loging conttroler is Done.......!!!");
-		System.out.println(" git done");
-		System.out.println(" git done");
+
 
 	}
 
