@@ -9,6 +9,7 @@ public class User {
 
 	private String name;
 	private String password;
+	private String mobileNumber;
 	private String mailId;
 	
 	public String getName() {
@@ -28,5 +29,10 @@ public class User {
 	}
 	public void setMailId(String mailId) {
 		this.mailId = mailId;
+	public String getMobileNumber() {
+		return mobileNumber;
+	}
+	public void setMobileNumber(String mobileNumber) {
+		this.mobileNumber = mobileNumber;
 	}
 }
