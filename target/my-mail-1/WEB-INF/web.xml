@@ -12,6 +12,6 @@
 	</servlet-mapping>
 
 	<welcome-file-list>
-		<welcome-file>/jsps/Home.jsp</welcome-file>
+		<welcome-file>/jsps/Hotel.jsp</welcome-file>
 	</welcome-file-list>
 </web-app>

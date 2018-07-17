@@ -30,6 +30,6 @@
       
       <!-- List of XML mapping files -->
       <mapping class = "com.facebook.pojo.Employee"/>
-      
+      <mapping class = "com.facebook.pojo.ItemsTypes"/>
    </session-factory>
 </hibernate-configuration>
