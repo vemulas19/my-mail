@@ -1,4 +1,5 @@
 com\facebook\daos\interf\IEmployeeDao.class
+com\facebook\pojo\Passport.class
 com\facebook\controllers\OrderControllers.class
 com\facebook\pojo\Oders.class
 com\facebook\pojo\Student.class

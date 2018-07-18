@@ -1,12 +1,30 @@
 package com.facebook.pojo;
 
+import java.util.List;
+
 public class Student {
 
 	private int stdId;
 	private String name;
 	private String course;
 	private String college;
+	private Passport ppt;
+	private List<String> cites;
+	
+	
+	public Student(String college, String course) {
+		this.college = college;
+		this.course = course;
+	}
 
+	public Student(String college) {
+		this.college = college;
+	}
+	
+	public Student(Passport ppt) {
+		this.ppt = ppt;
+	}
+	
 	public int getStdId() {
 		return stdId;
 	}
@@ -30,6 +48,20 @@ public class Student {
 	}
 	public void setCollege(String college) {
 		this.college = college;
+	}
+	public Passport getPpt() {
+		return ppt;
+	}
+	public void setPpt(Passport ppt) {
+		this.ppt = ppt;
+	}
+
+	public List<String> getCites() {
+		return cites;
+	}
+
+	public void setCites(List<String> cites) {
+		this.cites = cites;
 	}
 	
 }

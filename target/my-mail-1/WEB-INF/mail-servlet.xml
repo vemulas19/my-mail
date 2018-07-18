@@ -13,11 +13,16 @@
 	<context:component-scan base-package="com.facebook" />
 	<bean id="empHiberDao" class="com.facebook.daos.EmployeeHiberDao"></bean>
 	
-	<bean id="std" class="com.facebook.pojo.Student" scope="prototype" ></bean> 
+	<bean id="std" class="com.facebook.pojo.Student">
+		<property name="college" value="Aurora"></property>
+		<property name="ppt" ref="passport"></property>
+	</bean> 
 	
+	<bean id="passport" class="com.facebook.pojo.Passport" scope="prototype">
+	<property name="city" value="Hyderabad"></property>
+	</bean>
 	
-		<bean
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix">
 			<value>/jsps/</value>
 		</property>

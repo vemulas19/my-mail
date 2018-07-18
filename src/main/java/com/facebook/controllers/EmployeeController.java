@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.facebook.daos.EmployeeHiberDao;
 import com.facebook.daos.interf.IEmployeeDao;
 import com.facebook.pojo.Employee;
 import com.facebook.pojo.Student;
@@ -24,7 +23,7 @@ public class EmployeeController {
 
 	@Autowired
 	private IEmployeeDao empDao;
-	
+
 	@Autowired
 	private Student std1;
 	
@@ -36,21 +35,29 @@ public class EmployeeController {
 		System.out.println("Entered into saveEmployee :: EmployeeController");
 		System.out.println("hjsghgsjsoookljlkljkojhkj");
 		System.out.println("-----------------------------------------------------------");
-		
-		
+
 		std1.setStdId(101);
 		std1.setName("ragini");
-		std1.setCollege("nmrg college");
 		std1.setCourse("ECE");
-		
+		std1.getPpt().setPptId(12654);
+
 		std2.setStdId(102);
 		std2.setName("suchi");
-		std2.setCollege("kits college");
 		std2.setCourse("CSE");
+		std2.getPpt().setPptId(4532);
+
 		
-		System.out.println(std1.getName() + "..." + std1.getCollege() + "..." + std1.getCourse() + "..." + std1.getStdId());
 		
-		System.out.println(std2.getName() + "..." + std2.getCollege() + "..." + std2.getCourse() + "..." + std2.getStdId());
+		System.out.println(std1.getName() + "..." + std1.getCollege() + "..." + std1.getCourse() + "..."
+				+ std1.getStdId() + "---" + std1.getPpt().getPptId() + "---" + std1.getPpt().getCity());
+
+		System.out.println(std2.getName() + "..." + std2.getCollege() + "..." + std2.getCourse() + "..."
+				+ std2.getStdId() + "---" + std2.getPpt().getPptId() + "---" + std2.getPpt().getCity());
+		
+		System.out.println("#####################################33");
+		System.out.println(std1.getCites());
+		System.out.println(std2.getCites());
+		System.out.println("#####################################33");
 		empDao.saveEmployee(emp);
 		return "login";
 

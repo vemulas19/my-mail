@@ -10,13 +10,31 @@
         http://www.springframework.org/schema/context 
         http://www.springframework.org/schema/context/spring-context-3.2.xsd">
 
-	<context:component-scan base-package="com.facebook" />
+	<context:component-scan
+		base-package="com.facebook" />
 	<bean id="empHiberDao" class="com.facebook.daos.EmployeeHiberDao"></bean>
-	
-	<bean id="std" class="com.facebook.pojo.Student" scope="prototype" ></bean> 
-	
-	
-		<bean
+
+	<bean id="std" class="com.facebook.pojo.Student">
+		<constructor-arg value="Aurora" type="String"></constructor-arg>
+		<property name="cites">
+			<list>
+				<value>Chennai</value>
+				<value>Mumbai</value>
+				<value>Delhi</value>
+				<value>Kolkata</value>
+				<value>Hyderabad</value>
+				<value>Bangalore</value>
+			</list>
+		</property>
+		<property name="ppt" ref="passport"></property>
+	</bean>
+
+	<bean id="passport" class="com.facebook.pojo.Passport"
+		scope="prototype">
+		<property name="city" value="Hyderabad"></property>
+	</bean>
+
+	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix">
 			<value>/jsps/</value>
@@ -25,4 +43,4 @@
 			<value>.jsp</value>
 		</property>
 	</bean>
-	</beans>
+</beans>
