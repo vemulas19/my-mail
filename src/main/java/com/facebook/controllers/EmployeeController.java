@@ -26,7 +26,7 @@ public class EmployeeController {
 
 	@Autowired
 	private Student std1;
-	
+
 	@Autowired
 	private Student std2;
 

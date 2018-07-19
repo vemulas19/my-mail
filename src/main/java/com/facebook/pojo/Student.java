@@ -11,6 +11,9 @@ public class Student {
 	private Passport ppt;
 	private List<String> cites;
 	
+	Student() {
+		
+	}
 	
 	public Student(String college, String course) {
 		this.college = college;
