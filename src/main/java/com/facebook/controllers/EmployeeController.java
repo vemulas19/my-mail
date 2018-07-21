@@ -3,6 +3,7 @@ package com.facebook.controllers;
 import java.sql.SQLException;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -15,12 +16,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.facebook.daos.interf.IEmployeeDao;
+import com.facebook.log4j.Test;
 import com.facebook.pojo.Employee;
 import com.facebook.pojo.Student;
 
 @Controller
 public class EmployeeController {
 
+	final static Logger logger = Logger.getLogger(EmployeeController.class);
+	
 	@Autowired
 	private IEmployeeDao empDao;
 
@@ -32,9 +36,8 @@ public class EmployeeController {
 
 	@RequestMapping(value = "/registerEmployee")
 	public String saveEmployee(Employee emp) {
-		System.out.println("Entered into saveEmployee :: EmployeeController");
-		System.out.println("hjsghgsjsoookljlkljkojhkj");
-		System.out.println("-----------------------------------------------------------");
+		logger.info("Entered into saveEmployee :: EmployeeController");
+		logger.info("-----------------------------------------------------------");
 
 		std1.setStdId(101);
 		std1.setName("ragini");
@@ -48,16 +51,21 @@ public class EmployeeController {
 
 		
 		
-		System.out.println(std1.getName() + "..." + std1.getCollege() + "..." + std1.getCourse() + "..."
+		logger.info(std1.getName() + "..." + std1.getCollege() + "..." + std1.getCourse() + "..."
 				+ std1.getStdId() + "---" + std1.getPpt().getPptId() + "---" + std1.getPpt().getCity());
 
-		System.out.println(std2.getName() + "..." + std2.getCollege() + "..." + std2.getCourse() + "..."
+		logger.info(std2.getName() + "..." + std2.getCollege() + "..." + std2.getCourse() + "..."
 				+ std2.getStdId() + "---" + std2.getPpt().getPptId() + "---" + std2.getPpt().getCity());
 		
-		System.out.println("#####################################33");
-		System.out.println(std1.getCites());
-		System.out.println(std2.getCites());
-		System.out.println("#####################################33");
+		logger.info("#####################################33");
+		logger.debug(std1.getCites());
+		logger.debug(std2.getCites());
+		logger.info("#####################################33");
+		if(emp.getMail() == null) {
+			logger.debug("Mail id is null!!");
+			return "Home";
+		}
+		
 		empDao.saveEmployee(emp);
 		return "login";
 

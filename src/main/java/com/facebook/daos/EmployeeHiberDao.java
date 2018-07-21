@@ -2,30 +2,34 @@ package com.facebook.daos;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.classic.Session;
 
+import com.facebook.controllers.EmployeeController;
 import com.facebook.daos.interf.IEmployeeDao;
 import com.facebook.pojo.Employee;
 
 public class EmployeeHiberDao implements IEmployeeDao{
+	
+	final static Logger logger = Logger.getLogger(EmployeeHiberDao.class);
 
 	public void saveEmployee(Employee emp) {
-		System.out.println("Entered saveEmployee :: EmployeeDao");
+		logger.info("Entered saveEmployee :: EmployeeDao");
 		try {
 			Configuration configuration=new Configuration().configure("hibernate.cfg.xml");
 			SessionFactory sessionFactory=configuration.buildSessionFactory();
 			Session session=sessionFactory.openSession();
-			System.out.println("trying to save!!");
+			logger.info("trying to save!!");
 			session.save(emp);
 			session.beginTransaction().commit();
-			System.out.println("Done!!");
+			logger.info("Done!!");
 		} catch(Exception e) {
-			System.out.println(e);
+			logger.error("Exception occured while saving an employee", e);
 		}
-		System.out.println("Exiting from saveEmployee :: EmployeeDao");
+		logger.info("Exiting from saveEmployee :: EmployeeDao");
 		//Database logic
 	}
 

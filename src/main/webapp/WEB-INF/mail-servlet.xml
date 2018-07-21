@@ -38,7 +38,7 @@
 		<property name="ppt" ref="passport"></property>
 	</bean> -->
 
- 	<bean id="std" class="com.facebook.pojo.Student autowire="byType"/>
+ 	<bean id="std" class="com.facebook.pojo.Student" autowire="byType"></bean>
  	
 	<bean id="passport" name="pptHyd" class="com.facebook.pojo.Passport" 
 		scope="prototype">
