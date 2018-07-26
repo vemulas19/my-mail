@@ -8,6 +8,7 @@ com\sunteam\Bowler.class
 com\facebook\pojo\Item.class
 com\facebook\pojo\Employee.class
 com\facebook\pojo\User.class
+com\facebook\log4j\Test.class
 com\facebook\sunteam\Bowler.class
 com\facebook\validation\Validation.class
 com\facebook\jdbc\daos\EmployeeJdbcDao.class

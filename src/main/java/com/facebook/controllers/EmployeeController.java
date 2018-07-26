@@ -24,7 +24,7 @@ import com.facebook.pojo.Student;
 public class EmployeeController {
 
 	final static Logger logger = Logger.getLogger(EmployeeController.class);
-	
+
 	@Autowired
 	private IEmployeeDao empDao;
 
@@ -35,7 +35,7 @@ public class EmployeeController {
 	private Student std2;
 
 	@RequestMapping(value = "/registerEmployee")
-	public String saveEmployee(Employee emp) {
+	public String saveEmployee(Employee emp, Model model) {
 		logger.info("Entered into saveEmployee :: EmployeeController");
 		logger.info("-----------------------------------------------------------");
 
@@ -49,25 +49,25 @@ public class EmployeeController {
 		std2.setCourse("CSE");
 		std2.getPpt().setPptId(4532);
 
-		
-		
-		logger.info(std1.getName() + "..." + std1.getCollege() + "..." + std1.getCourse() + "..."
-				+ std1.getStdId() + "---" + std1.getPpt().getPptId() + "---" + std1.getPpt().getCity());
+		logger.info(std1.getName() + "..." + std1.getCollege() + "..." + std1.getCourse() + "..." + std1.getStdId()
+				+ "---" + std1.getPpt().getPptId() + "---" + std1.getPpt().getCity());
 
-		logger.info(std2.getName() + "..." + std2.getCollege() + "..." + std2.getCourse() + "..."
-				+ std2.getStdId() + "---" + std2.getPpt().getPptId() + "---" + std2.getPpt().getCity());
-		
+		logger.info(std2.getName() + "..." + std2.getCollege() + "..." + std2.getCourse() + "..." + std2.getStdId()
+				+ "---" + std2.getPpt().getPptId() + "---" + std2.getPpt().getCity());
+
 		logger.info("#####################################33");
 		logger.debug(std1.getCites());
 		logger.debug(std2.getCites());
 		logger.info("#####################################33");
-		if(emp.getMail() == null) {
+		if (emp.getMail() == null) {
 			logger.debug("Mail id is null!!");
+			model.addAttribute("message", "Mail should not be null");
 			return "Home";
 		}
-		
+
+		model.addAttribute("message", "Registered Successfully!!");
 		empDao.saveEmployee(emp);
-		return "login";
+		return "Home";
 
 	}
 
@@ -122,6 +122,20 @@ public class EmployeeController {
 		Query queryAll = session.createQuery("from Employee");
 		List<Employee> employeeList = queryAll.list();
 		model.addAttribute("empList", employeeList);
+
+		return "Profile";
+	}
+
+	@RequestMapping(value = "/getEmployees")
+	public String getEmps(Model model) throws ClassNotFoundException, SQLException {
+
+		// get all employees
+		List<Employee> employeeList = empDao.getAllEmployees();
+
+		model.addAttribute("empList", employeeList);
+		for (Employee employee : employeeList) {
+			System.out.println(employee.getMail() + "--" + employee.getEmpName() + "--" + employee.getMbl());
+		}
 
 		return "Profile";
 	}
