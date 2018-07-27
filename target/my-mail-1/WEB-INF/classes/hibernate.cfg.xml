@@ -16,7 +16,7 @@
       <!-- Assume test is the database name -->
       
       <property name = "hibernate.connection.url">
-         jdbc:mysql://localhost/spring2
+         jdbc:mysql://localhost/spring
       </property>
       
       <property name = "hibernate.connection.username">

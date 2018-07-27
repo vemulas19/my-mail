@@ -13,18 +13,25 @@
 		<intercept-url pattern="/openInEdit*" access="ROLE_USER"/>
 		<form-login login-page="/gotoLoginPage" default-target-url="/home" authentication-failure-url="/gotoFailurePage" 
 		username-parameter="mail"
-		password-parameter="pwd"
-		/>
+		password-parameter="pwd"/>
+		<logout logout-success-url="/home" />
 		<!-- <http-basic/> -->
 	</http>
 	
-	<authentication-manager>
+	<!-- <authentication-manager>
 		<authentication-provider>
 			<user-service>
 				<user name="Rohit" password="priyanka" authorities="ROLE_USER" />
 				<user name="Virat" password="anushka" authorities="ROLE_USER" />
 				<user name="Dhoni" password="sakshi" authorities="ROLE_ADMIN" />
 			</user-service>
+		</authentication-provider>
+	</authentication-manager> -->
+	
+	<authentication-manager>
+		<authentication-provider>
+		<jdbc-user-service data-source-ref="dataSource" authorities-by-username-query ="SELECT mail, role from spring.emloyee where mail=?"
+			users-by-username-query="SELECT mail, password, true from spring.emloyee where mail=?" />
 		</authentication-provider>
 	</authentication-manager>
 </beans:beans>

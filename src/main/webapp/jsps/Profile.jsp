@@ -22,6 +22,7 @@ function openInEditMode(mail) {
 <title>Insert title here</title>
 </head>
 <body>
+<a href="<core:url value="j_spring_security_logout" />" > Logout</a></br></br>
 <form action="">
 <table border="2" >
 <tr style="color:red" >
