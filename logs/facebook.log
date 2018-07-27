@@ -1,1 +1,6 @@
 2018-07-26 20:35:10 INFO  EmployeeHiberDao:32 - Exiting from saveEmployee :: EmployeeDao
+2018-07-27 08:34:28 INFO  SecurityMappingController:15 - Entered into openLoginPage :: method
+2018-07-27 08:45:28 INFO  SecurityMappingController:15 - Entered into openLoginPage :: method
+2018-07-27 08:54:59 INFO  SecurityMappingController:15 - Entered into openLoginPage :: method
+2018-07-27 08:57:31 INFO  SecurityMappingController:15 - Entered into openLoginPage :: method
+2018-07-27 08:57:38 INFO  SecurityMappingController:21 - Entered into openLoginPage :: method

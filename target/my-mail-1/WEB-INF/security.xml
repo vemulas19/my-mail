@@ -11,7 +11,11 @@
 	<http>
 		<intercept-url pattern="/delete*" access="ROLE_USER"/>
 		<intercept-url pattern="/openInEdit*" access="ROLE_USER"/>
-		<http-basic/>
+		<form-login login-page="/gotoLoginPage" default-target-url="/home" authentication-failure-url="/gotoFailurePage" 
+		username-parameter="mail"
+		password-parameter="pwd"
+		/>
+		<!-- <http-basic/> -->
 	</http>
 	
 	<authentication-manager>

@@ -1,6 +1,7 @@
 com\facebook\daos\interf\IEmployeeDao.class
 com\facebook\pojo\Passport.class
 com\facebook\controllers\OrderControllers.class
+com\facebook\controllers\SecurityMappingController.class
 com\facebook\pojo\Oders.class
 com\facebook\pojo\Student.class
 com\facebook\pojo\ItemsTypes.class
