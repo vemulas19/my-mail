@@ -1,5 +1,7 @@
 package com.facebook.controllers;
 
+import java.security.Principal;
+
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,14 +20,15 @@ public class SecurityMappingController {
 	
 	@RequestMapping(value="/gotoFailurePage")
 	public String openLoginPageForFail(Model model) {
-		logger.info("Entered into openLoginPage :: method");
+		logger.info("Entered into gotoFailurePage :: method");
+		
 		model.addAttribute("message", "Invalid Credentials!! Please try again!!");
 		return "login";
 	}
 	
 	@RequestMapping(value="/home")
 	public String gotoHome() {
-		logger.info("Entered into openLoginPage :: method");
+		logger.info("Entered into gotoHome :: method");
 		return "Home";
 	}
 }
