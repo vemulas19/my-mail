@@ -1,11 +1,5 @@
 package com.facebook.service;
 
-import java.sql.SQLException;
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
-
 import com.facebook.daos.EmployeeHiberDao;
 import com.facebook.pojo.Employee;
 import com.facebook.validation.Validation;
