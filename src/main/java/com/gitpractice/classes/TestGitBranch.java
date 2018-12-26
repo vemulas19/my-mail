@@ -10,11 +10,11 @@ public class TestGitBranch {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getName() {
-		return name;
+	public String getBranchName() {
+		return branchName;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setBranchName(String branchName) {
+		this.branchName = branchName;
 	}
 	public String getEmail() {
 		return email;
